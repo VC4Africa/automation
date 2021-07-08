@@ -130,7 +130,11 @@ billz/vc4a-dashboard.git)
   ;;
 billz/vc4a-styles.git)
   sudo rm -rf node_modules
-  
+
+  # As a child theme, the parent theme needs to be available to prevent errors.
+  sudo rm -rf vc4africa
+  git clone -b $TEST_BRANCH git@github.com:billz/vc4a-theme.git vc4africa
+
   NPM_COMMANDS="yarn install"
   GULP_COMMANDS="gulp build"
   ;;

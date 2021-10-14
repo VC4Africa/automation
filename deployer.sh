@@ -31,34 +31,44 @@ NPM_COMMANDS=""
 COMPOSER_COMMANDS=""
 
 case $REPOSITORY_NAME in
-billz/vc4a-theme.git)
+vc4a-dev/vc4a-theme.git)
   SUB_PATH=${MAIN_PATH}"/wp-content/themes/vc4africa"
   NPM_COMMANDS="sudo yarn install"
-  GULP_COMMANDS="sudo gulp build"
+  GULP_COMMANDS="sudo gulp"
   ;;
-billz/theme-academy.git)
+vc4a-dev/vc4a-academy.git)
   SUB_PATH=${MAIN_PATH}"/wp-content/themes/academy"
   NPM_COMMANDS="sudo yarn install"
-  GULP_COMMANDS="sudo gulp build"
+  GULP_COMMANDS="sudo gulp"
   ;;
-billz/theme-community.git)
+vc4a-dev/vc4a-community.git)
   SUB_PATH=${MAIN_PATH}"/wp-content/themes/community"
   NPM_COMMANDS="sudo yarn install"
-  GULP_COMMANDS="sudo gulp build"
+  GULP_COMMANDS="sudo gulp"
   ;;
-billz/vc4a-dashboard.git)
+vc4a-dev/vc4a-dashboard.git)
   SUB_PATH=${MAIN_PATH}"/wp-content/themes/dashboard"
   NPM_COMMANDS="npm install"
   GULP_COMMANDS="npm run build"
   ;;
-billz/vc4a-service-theme.git)
+vc4a-dev/vc4a-consulting.git)
   SUB_PATH=${MAIN_PATH}"/wp-content/themes/consulting"
   ;;
-billz/mu-plugins.git)
+vc4a-dev/vc4a-styles.git)
+  NPM_COMMANDS="sudo yarn install"
+  GULP_COMMANDS="sudo gulp"
+  SUB_PATH=${MAIN_PATH}"/wp-content/themes/styles"
+  ;;
+vc4a-dev/vc4a-mentors.git)
+  NPM_COMMANDS="sudo yarn install"
+  GULP_COMMANDS="sudo gulp"
+  SUB_PATH=${MAIN_PATH}"/wp-content/themes/mentors"
+  ;;
+vc4a-dev/mu-plugins.git)
   SUB_PATH=${MAIN_PATH}"/wp-content/mu-plugins"
   COMPOSER_COMMANDS="sudo php composer.phar install --no-dev -n"
   ;;
-billz/vc4a-plugins.git)
+vc4a-dev/vc4a-plugins.git)
   SUB_PATH=${MAIN_PATH}"/wp-content/plugins"
   ;;
 esac

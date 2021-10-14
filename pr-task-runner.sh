@@ -41,15 +41,15 @@ NPM_COMMANDS=""
 COMPOSER_COMMANDS=""
 
 case $REPOSITORY_NAME in
-billz/vc4a-theme.git)
+vc4a-dev/vc4a-theme.git)
   sudo rm -rf node_modules
   NPM_COMMANDS="yarn install"
   GULP_COMMANDS="gulp build"
   ;;
-billz/theme-academy.git)
+vc4a-dev/vc4a-academy.git)
   sudo rm -rf vc4africa
   sudo rm -rf node_modules
-  git clone -b $TEST_BRANCH git@github.com:billz/vc4a-theme.git vc4africa
+  git clone -b $TEST_BRANCH git@github.com:vc4a-dev/vc4a-theme.git vc4africa
   #sed -i -e 's/\.\.\/\.\.\/\.\.\/vc4africa/vc4africa/g' resources/less/style.less
   for i in $(find . -iname "*.less"); do sed -i -e 's/\.\.\/\.\.\/\.\.\/\.\.\/\.\.\/\.\.\/vc4africa/vc4africa/g' $i; done
   for i in $(find . -iname "*.less"); do sed -i -e 's/\.\.\/\.\.\/\.\.\/\.\.\/\.\.\/vc4africa/vc4africa/g' $i; done
@@ -59,10 +59,10 @@ billz/theme-academy.git)
   NPM_COMMANDS="yarn install"
   GULP_COMMANDS="gulp build"
   ;;
-billz/theme-community.git)
+vc4a-dev/vc4a-community.git)
   sudo rm -rf vc4africa
   sudo rm -rf node_modules
-  git clone -b $TEST_BRANCH git@github.com:billz/vc4a-theme.git vc4africa
+  git clone -b $TEST_BRANCH git@github.com:vc4a-dev/vc4a-theme.git vc4africa
   #sed -i -e 's/\.\.\/\.\.\/\.\.\/vc4africa/vc4africa/g' resources/less/style.less
   for i in $(find . -iname "*.less"); do sed -i -e 's/\.\.\/\.\.\/\.\.\/\.\.\/\.\.\/\.\.\/vc4africa/vc4africa/g' $i; done
   for i in $(find . -iname "*.less"); do sed -i -e 's/\.\.\/\.\.\/\.\.\/\.\.\/\.\.\/vc4africa/vc4africa/g' $i; done
@@ -72,20 +72,46 @@ billz/theme-community.git)
   NPM_COMMANDS="yarn install"
   GULP_COMMANDS="gulp build"
   ;;
-billz/vc4a-dashboard.git)
+vc4a-dev/vc4a-mentors.git)
+    sudo rm -rf vc4africa
+    sudo rm -rf node_modules
+    git clone -b $TEST_BRANCH git@github.com:vc4a-dev/vc4a-theme.git vc4africa
+    #sed -i -e 's/\.\.\/\.\.\/\.\.\/vc4africa/vc4africa/g' resources/less/style.less
+    for i in $(find . -iname "*.less"); do sed -i -e 's/\.\.\/\.\.\/\.\.\/\.\.\/\.\.\/\.\.\/vc4africa/vc4africa/g' $i; done
+    for i in $(find . -iname "*.less"); do sed -i -e 's/\.\.\/\.\.\/\.\.\/\.\.\/\.\.\/vc4africa/vc4africa/g' $i; done
+    for i in $(find . -iname "*.less"); do sed -i -e 's/\.\.\/\.\.\/\.\.\/\.\.\/vc4africa/vc4africa/g' $i; done
+    for i in $(find . -iname "*.less"); do sed -i -e 's/\.\.\/\.\.\/\.\.\/vc4africa/vc4africa/g' $i; done
+
+    NPM_COMMANDS="yarn install"
+    GULP_COMMANDS="gulp"
+    ;;
+vc4a-dev/vc4a-dashboard.git)
   sudo rm -rf node_modules
 
-  NPM_COMMANDS="npm install"
-  GULP_COMMANDS="npm run build"
+  NPM_COMMANDS="yarn install"
+  GULP_COMMANDS="yarnrun build"
   ;;
-billz/vc4a-service-theme.git)
-  echo "no commands available for vc4a-service-theme"
+vc4a-dev/vc4a-styles.git)
+    sudo rm -rf vc4africa
+    sudo rm -rf node_modules
+    git clone -b $TEST_BRANCH git@github.com:vc4a-dev/vc4a-theme.git vc4africa
+    #sed -i -e 's/\.\.\/\.\.\/\.\.\/vc4africa/vc4africa/g' resources/less/style.less
+    for i in $(find . -iname "*.less"); do sed -i -e 's/\.\.\/\.\.\/\.\.\/\.\.\/\.\.\/\.\.\/vc4africa/vc4africa/g' $i; done
+    for i in $(find . -iname "*.less"); do sed -i -e 's/\.\.\/\.\.\/\.\.\/\.\.\/\.\.\/vc4africa/vc4africa/g' $i; done
+    for i in $(find . -iname "*.less"); do sed -i -e 's/\.\.\/\.\.\/\.\.\/\.\.\/vc4africa/vc4africa/g' $i; done
+    for i in $(find . -iname "*.less"); do sed -i -e 's/\.\.\/\.\.\/\.\.\/vc4africa/vc4africa/g' $i; done
+
+    NPM_COMMANDS="yarn install"
+    GULP_COMMANDS="gulp"
+    ;;
+vc4a-dev/vc4a-consulting.git)
+  echo "no commands available for vc4a-consulting"
   ;;
-billz/mu-plugins.git)
+vc4a-dev/mu-plugins.git)
   echo "no commands available for mu-plugins"
   ;;
-billz/vc4a-plugins.git)
-  echo "no commands available for vc4a-service-theme"
+vc4a-dev/vc4a-plugins.git)
+  echo "no commands available for vc4a-plugins"
   ;;
 esac
 
